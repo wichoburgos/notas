@@ -1,25 +1,51 @@
-
+import { useState } from "react";
 
 function App() {
 
-  
-let varprueba = "titulo"
-  const handleChangePrueba = (event) => { 
-varprueba = event.target.value
+//hooks
 
-   
-  
-  }
+const [tituloState, setTituloState] =useState("");
+const [fechaState, setfechaState] =useState("");
+const [notaState, setnotaState] =useState("");
+
+const handleChangetitulo = (event) => {
+  setTituloState(event.target.value);
+}
+
+const handleChangefecha = (event) => {
+  setfechaState(event.target.value);
+}
+
+const handleChangeNota = (event) => {
+  setnotaState(event.target.value);
+}
+
 
 
   return (
 <div className="App">
 
 <h3>Notas</h3>
-<label htmlFor="pruebaID">Input de prueba</label>
+<label htmlFor="titulo">Titulo: </label>
 
-<input id="pruebaID" name="InPUT" type="text" onChange={handleChangePrueba} value={varprueba}
+<input id="titulo" name="titulo" type="text" onChange={handleChangetitulo} value={tituloState}
 />
+
+<br />
+<label htmlFor="fecha">Fecha: </label>
+
+<input id="fecha" name="fecha" type="text" onChange={handleChangefecha} value={fechaState}
+/>
+
+<br />
+
+
+<label htmlFor="nota">Nota: </label>
+
+<input id="nota" name="nota" type="text" onChange={handleChangeNota} value={notaState}
+/>
+
+
 
 </div>
 );
