@@ -17,7 +17,9 @@ const handleInputChange = (event) => {
     [event.target.name]: event.target.value,
   });
 };
-
+const handleResetClick = ( ) => {
+  setInputState({titulo:"", fecha:"",nota:""});
+}
 
 
   return (
@@ -42,6 +44,9 @@ const handleInputChange = (event) => {
 
 <input id="nota" name="nota" type="text" onChange={handleInputChange} value={inputState.nota}
 />
+<div ClassName="mt-2">
+<button type="button"className="btn btn-primary" onClick={handleResetClick} >REINICIO</button>
+</div>
 
 
 
